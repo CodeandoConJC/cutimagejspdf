@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Recortar imagen html2pdf & jsPDF</title>
+</head>
+<body>
+   <div class="container-fluid mb-4 p-5 bg-success">
+      <div class="py-2 text-center">
+         <img src="imgheader.png" height="130">
+      </div>
+      <div class="fs-4 text-white text-justify" style="text-align:justify;">
+         Se debe generar un archivo PDF haciendo uso de la librería jsPDF y html2canvas, sin embargo, al momento de que html2canvas genera la imagen, esta rebasa el tamaño máximo permitido de la página. Como solución, la imagen generada, es particionada en parte superior e inferior. La partición superior, es colocada en lo restante de la primera página y en la próxima página del documento, se coloca la parte inferior.<br>
+         Adicional a lo anterior, los recortes a la imagen se colocan en los elementos HTML correspondientes.
+      </div>
+      <div class="py-2 text-white-50 text-center">
+         HTML + Bootstrap 5.3 + JavaScript + jsPDF + html2canvas
+      </div>
+      <div class="py-2 text-white-50 text-end fst-italic">
+         Puedes seguirme un YT: Codeando con JC. Recuerda, Codear, codear es divertido!
+      </div>
+
+   </div>
+      <div class="container justify-content-center align-items-center text-center">
+         <div class="row">
+            <div class="col-md-6">
+               <div class="fs-5 mb-3  py-2 bg-secondary text-white">
+                  Imagen de origen
+               </div>
+               <div id="divImgOrigen" class="bg-secondary">
+                  <img id="imgOrigen" src="hellfishwallpaper.png" height="300" class="img-fluid" > 
+               </div>
+               <div class="my-3">
+                  <button id="btnCutCrop" type="button" class="btn btn-lg btn-outline-secondary">
+                     Cut&Crop
+                  </button>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="container">
+                  <div class="fs-5">Parte 1</div>
+                  <div id="corteImg1" class="my-2 border border-success-subtle">
+                  </div>
+               </div>
+               <div class="container">
+                  <div class="fs-5">Parte 2</div>
+                  <div id="corteImg2" class="my-2 border border-success-subtle">
+                  </div>
+               </div>  
+            </div>
+         </div>
+      </div>
+
+      <div class="container my-3 py-2 text-muted">
+         <p>
+            <i class="bi bi-check2-circle"></i>
+            Recuerda que con html2canvas, puedes generar una imagen de un div con un ID establecido, o generar uno nuevo y capturar ese DIV para convertirlo en imagen.
+         </p>
+         <p>
+            <i class="bi bi-check2-circle"></i>
+            Las funciones están de la forma actual, con la intención de que puedan se entendibles, incluso las variables internas pueden repetirse en cada funcion.
+         </p>
+         <p>
+            <i class="bi bi-check2-circle"></i>
+            Las funciones que generan los recortes de la imagen, se pueden reducir a solamente 1 función.
+         </p>
+         <p>
+            <i class="bi bi-check2-circle"></i>
+            Con la función, drawImage(), se puede extraer cualquier parte de la imagen original, siempre y cuando se modifiquen los puntos establecidos en la función correspondiente.
+         </p>
+         <p>
+            <i class="bi bi-check2-circle"></i>
+            Las imágenes pueden estar sujetas a derechos de autor.
+         </p>
+      </div>
+</body>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<script src="jsPDF/jspdf.umd.min.js"></script>
+<script src="jsPDF/html2canvas.min.js"></script>
+<script src="index.js"></script>
+</html>
